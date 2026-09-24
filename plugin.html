@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тест UTM: hbWidgetSettings</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // US-3: мітки від інтегратора. Мають бути задані ДО коду віджета.
+    window.hbWidgetSettings = {
+      marketing: {
+        utm_source: "plugin",
+        utm_medium: "integration",
+        utm_campaign: "plugin_test"
+      }
+    };
+  </script>
+</head>
+<body>
+  <header><div class="wrap"><nav>
+    <a href="index.html">Головна</a>
+    <a href="services.html">Послуги</a>
+    <a href="plugin.html" class="active">Тест hbWidgetSettings</a>
+  </nav></div></header>
+
+  <main class="wrap">
+    <h1>Мітки від інтегратора</h1>
+    <p>Тут задано <code>window.hbWidgetSettings.marketing</code>. Відкрийте сторінку в чистому браузері (інкогніто) без параметрів і напишіть у віджет. У чаті має бути source = plugin.</p>
+    <div id="debug"></div>
+  </main>
+
+  <script src="debug.js"></script>
+
+  <!-- ===== ВСТАВТЕ КОД ВІДЖЕТА ТУТ ===== -->
+
+</body>
+</html>

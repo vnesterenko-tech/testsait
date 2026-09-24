@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тест UTM: головна</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><div class="wrap"><nav>
+    <a href="index.html" class="active">Головна</a>
+    <a href="services.html">Послуги</a>
+    <a href="plugin.html">Тест hbWidgetSettings</a>
+  </nav></div></header>
+
+  <main class="wrap">
+    <h1>Тестовий сайт для UTM-міток</h1>
+    <p>Відкрийте сторінку за одним із посилань нижче, перейдіть на «Послуги» і напишіть у віджет. Потім у кабінеті перевірте блок «Маркетинг» у чаті.</p>
+
+    <h2>Готові посилання</h2>
+    <div class="panel"><ul class="links">
+      <li><a href="?utm_source=facebook&utm_medium=cpc&utm_campaign=test_sep&utm_content=video1&utm_term=bot">Перший візит: facebook / cpc / test_sep / video1 / bot</a></li>
+      <li><a href="?utm_source=google&utm_medium=cpc&utm_campaign=test_second">Повторний візит: google / cpc / test_second</a></li>
+      <li><a href="?utm_source=facebook&fbclid=TEST_FBCLID_123">Лише source + fbclid</a></li>
+      <li><a href="?gclid=TEST_GCLID_456">Лише gclid</a></li>
+      <li><a href="?utm_source=%3Cb%3Ehtml%3C%2Fb%3E&utm_campaign=%3Cscript%3Ealert(1)%3C%2Fscript%3E">Значення з HTML-тегами (перевірка екранування)</a></li>
+      <li><a href="#" id="longlink">Значення довше 512 символів</a></li>
+      <li><a href="index.html">Без міток</a></li>
+    </ul></div>
+
+    <div id="debug"></div>
+  </main>
+
+  <script>
+    // посилання з utm_campaign на 600 символів
+    document.getElementById("longlink").href = "?utm_source=long&utm_campaign=" + "x".repeat(600);
+  </script>
+  <script src="debug.js"></script>
+
+  <!-- ===== ВСТАВТЕ КОД ВІДЖЕТА ТУТ ===== -->
+
+</body>
+</html>
